@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken'
+import fs from 'fs'
 
-const IN_PUB_KEY = process.env.IN_PUB_KEY
-const OUT_PRIV_KEY = process.env.OUT_PRIV_KEY
+const IN_PUB_KEY = fs.readFileSync(process.env.IN_PUB_KEY)
+const OUT_PRIV_KEY = fs.readFileSync(process.env.OUT_PRIV_KEY)
 
 export async function decrypt (cipher) {
   return new Promise(function (resolve, reject) {

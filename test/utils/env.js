@@ -1,9 +1,8 @@
-import fs from 'fs'
 import path from 'path'
 
 process.env.NODE_ENV = 'test'
-process.env.IN_PUB_KEY = fs.readFileSync(path.join(__dirname, 'jwtRS256.key.pub'))
-process.env.OUT_PRIV_KEY = fs.readFileSync(path.join(__dirname, 'jwtRS256.key'))
+process.env.IN_PUB_KEY = path.join(__dirname, 'jwtRS256.key.pub')
+process.env.OUT_PRIV_KEY = path.join(__dirname, 'jwtRS256.key')
 
 process.env.LDAP_PORT = 3899
 process.env.LDAP_URL = `ldap://localhost:${process.env.LDAP_PORT}`
