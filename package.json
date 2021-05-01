@@ -1,0 +1,35 @@
+{
+  "name": "ldap-user-proxy",
+  "version": "1.0.0",
+  "description": "encrypted API proxying LDAP server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r esm --tls-min-v1.0 server.js",
+    "startdbg": "node -r esm --tls-min-v1.0 --inspect-brk server.js",
+    "test": "mocha -r esm -r ./test/utils/env --exit './test/main.js'",
+    "testdbg": "mocha -r esm -r ./test/utils/env --inspect-brk './test/main.js'"
+  },
+  "author": "Vaclav Klecanda <vencax77@gmail.com> (http://vxk.cz)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "esm": "^3.2.25",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "ldap-pool": "0.0.1016",
+    "ldapjs": "^2.2.0",
+    "morgan": "^1.9.0",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "deepcopy": "^2.0.0",
+    "expect": "^1.20.2",
+    "jsdom": "^9.8.0",
+    "mocha": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
